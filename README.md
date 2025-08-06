@@ -357,51 +357,6 @@ curl -X GET http://your-server:8000/api/logs \
 
 ---
 
-## 🐳 **Deployment Options**
-
-### **Docker Deployment (Recommended)**
-```bash
-# Quick start with Docker
-docker-compose -f docker/docker-compose.yml up -d
-
-# Development environment
-docker-compose -f docker/docker-compose.dev.yml up -d
-
-# Production with monitoring
-docker-compose -f docker/docker-compose.prod.yml up -d
-
-# Using deployment script
-./scripts/docker/docker-deploy.sh up
-```
-
-### **Standalone Binary**
-```bash
-# Build and deploy
-./scripts/build/build.sh
-sudo ./scripts/deployment/deploy.sh
-```
-
-### **Manual Installation**
-```bash
-# Clone and setup
-git clone https://github.com/FaheemAlvii/go-osm-admin-api.git
-cd go-osm-admin-api
-go mod download
-go run main.go
-```
-
-### **CI/CD Pipeline**
-```bash
-# Automatic builds and deployments
-# Push to develop → Deploy to staging
-# Push to main → Run tests and security scans
-# Create tag v* → Deploy to production
-
-# Manual deployment
-# Go to Actions → Deploy → Run workflow
-```
-
----
 
 ## 📞 **Support & Documentation**
 
@@ -449,5 +404,6 @@ go run main.go
 ✅ **Professional Support** - Detailed logging and error handling  
 
 ---
+
 
 *Ready to transform your Odoo server management? Get started today! 🚀* 
