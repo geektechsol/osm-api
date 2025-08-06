@@ -376,11 +376,6 @@ curl -X GET http://your-server:8000/api/logs \
 - Error tracking and reporting
 - Performance monitoring
 
-### **Deployment Guides**
-- [Docker Deployment Guide](docker/DOCKER.md)
-- [Standalone Deployment Guide](docs/user-guide/DEPLOYMENT.md)
-- [GitHub Actions Workflows](.github/README.md)
-
 ---
 
 ## 🎯 **Perfect For**
@@ -407,3 +402,4 @@ curl -X GET http://your-server:8000/api/logs \
 
 
 *Ready to transform your Odoo server management? Get started today! 🚀* 
+
