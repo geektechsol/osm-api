@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSM Admin API Docs</title>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+  <style>
+    body { margin:0; background: #fafafa; }
+    .topbar { background: #222c36; }
+    .topbar-wrapper img { content:url('https://www.geektechsol.com/web/image/website/1/logo/Geek%20Tech%20Sol'); height:40px; }
+    .topbar { display: none !important; }
+    .scheme-container > label,
+    .scheme-container > span {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+  <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+  <script>
+    const tagOrder = [
+      '\ud83d\udc65 Linux System Users',
+      '\ud83c\udfe2 Odoo Instances',
+      '\ud83d\udccb Odoo Installation Logs',
+      '\ud83d\udcbe Odoo Backups',
+      '\ud83d\udc0d Odoo Python PIP',
+      '\ud83d\udce6 Odoo GitHub Addons',
+      '\ud83e\udde9 Odoo Apps',
+      '\ud83d\udc64 Odoo Users',
+      '\ud83c\udfad Impersonation',
+      '\ud83c\udf10 Odoo Domains',
+      '\ud83d\udd27 Advanced Proxy Management',
+      '\ud83d\udcca Server Metrics',
+      '\ud83c\udfe5 Health'
+    ];
+    window.onload = function() {
+      window.ui = SwaggerUIBundle({
+        url: 'swagger.json',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: "StandaloneLayout",
+        tagsSorter: function(a, b) {
+          return tagOrder.indexOf(a) - tagOrder.indexOf(b);
+        },
+        operationsSorter: function(a, b) {
+          const order = { get: 1, post: 2, put: 3, delete: 4 };
+          const methodA = order[a.get("method")] || 99;
+          const methodB = order[b.get("method")] || 99;
+          if (methodA !== methodB) return methodA - methodB;
+          return a.get("path").localeCompare(b.get("path"));
+        },
+      });
+    };
+  </script>
+</body>
+</html> 
